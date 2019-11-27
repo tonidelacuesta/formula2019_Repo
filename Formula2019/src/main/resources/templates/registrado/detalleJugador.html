@@ -1,0 +1,37 @@
+ <!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head th:replace="/fragmentos :: head">
+<meta charset="utf-8"> 
+</head>
+
+<body>
+
+<div th:replace="/fragmentos :: nav"></div>
+	<div class="flag">
+		<div class="listado">
+				<h3 th:text="'Detalle puntuación: '+ ${jugador}"></h3>
+			<table>
+			<tr>
+				<th>Gran Premio</th>
+				<th>Ganador</th>
+				<th>Segundo</th>
+				<th>Tercero</th>
+				<th>Vuelta rápida</th>
+				<th>Total</th>
+			</tr>
+			<tr th:each="a: ${aciertos}">
+				<td th:text="${a.carrera.ciudad}"></td>
+				<td th:text="${a.acierto_primero}"></td>
+				<td th:text="${a.acierto_segundo}"></td>
+				<td th:text="${a.acierto_tercero}"></td>
+				<td th:text="${a.acierto_vrapida}"></td>
+				<td th:text="${a.acierto_primero} + ${a.acierto_segundo} + ${a.acierto_tercero} + ${a.acierto_vrapida}"></td>
+			</tr>
+			
+			</table>
+		<a th:href="@{/clasificacion}">Volver  <i class="fas fa-chevron-circle-left"></i></a>
+		</div>
+	</div>
+<span th:replace="/fragmentos :: bootstrap"></span>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:replace="/fragmentos :: head">
+<meta charset="utf-8">
+<title>Formulario Grandes premios</title>
+</head>
+<body class="admin_panel">
+	
+	<div class="container">
+		<h3>Añadir Gran Premio</h3>
+	</div>
+	<div class="container">
+		<form th:object="${granpremio}" action="/grandespremios/insertaGrandesPremios" method="POST">
+			<table>
+				<tr>
+					<td>
+						<p>Nombre: <input type="text" th:field="*{ciudad}"/></p>
+						<p>Fecha límite: <input type="date" name="fecha"/></p>
+						
+						<select name="gp_anterior">
+							<option value="">¿Cuál es el gran premio anterior?</option>
+							<option th:each="granpremio: ${listaGrandesPremios}"
+									th:text="${granpremio.ciudad}"
+									th:value="${granpremio.idgranpremio}"></option>
+		<!-- 							th:field="*{gp_anterior}"></option>					 -->
+						</select>
+						
+						<p><input type="submit" value="Inserta Gran premio"/></p>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<a th:href="@{/grandespremios/listaGrandesPremios}"><i class="fas fa-arrow-alt-circle-left"></i> Volver</a>
+	</div>
+</body>
+</html>

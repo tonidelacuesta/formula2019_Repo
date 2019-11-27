@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head th:replace="/fragmentos :: head">
+<meta charset="utf-8"> 
+</head>
+<body>
+
+
+<div th:replace="/fragmentos :: nav"></div>
+
+<div class="fondo-apuesta">
+
+ <form class="form-apuesta" method='POST' action="/grandespremios/enviarApuesta" th:object="${apuesta}">
+    
+    <h2>Carrera</h2>
+    
+    <select name="carrera" required>
+	    <option value="">Elige una carrera</option>
+	    <option th:each="granpremio : ${selectGrandesPremios}"
+	    		th:value="${granpremio.idgranpremio}" 
+	    		th:text="${granpremio.ciudad}"></option>
+    </select>
+    
+    <h2>Vuelta rápida</h2>
+    
+    <select name="vrapida" required>
+	    <option value="">Elige un piloto</option>
+	    <option th:each="piloto :${listaPilotos}"
+	    		th:value="${piloto.nombre}"
+	    		th:text="${piloto.nombre}"></option>
+    </select>
+    
+    <h2>1º posición</h2>
+    
+    <select name="idpiloto1" required>
+	    <option value="">Elige un piloto</option>
+	    <option th:each="piloto :${listaPilotos}"
+	    		th:value="${piloto.nombre}"
+	    		th:text="${piloto.nombre}"></option>
+    </select>
+    
+    <h2>2ª posición</h2>
+    
+  <select name="idpiloto2" required>
+	    <option value="">Elige un piloto</option>
+	    <option th:each="piloto :${listaPilotos}"
+	    		th:value="${piloto.nombre}"
+	    		th:text="${piloto.nombre}"></option>
+    </select>
+    
+    <h2>3ª posición</h2>
+    
+    <select name="idpiloto3" required>
+	    <option value="">Elige un piloto</option>
+	    <option th:each="piloto :${listaPilotos}"
+	    		th:value="${piloto.nombre}"
+	    		th:text="${piloto.nombre}"></option>
+    </select>
+    
+    
+ 	<p><input type="submit" value="Enviar apuesta"></p>
+ 
+ </form>
+ </div>
+
+<span th:replace="/fragmentos :: bootstrap"></span>
+</body>
+</html>

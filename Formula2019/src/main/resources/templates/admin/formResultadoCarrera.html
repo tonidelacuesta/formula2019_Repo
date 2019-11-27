@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:replace="/fragmentos :: head">
+<meta charset="utf-8">
+<title>Resultado carrera</title>
+</head>
+<body class="admin_panel">
+
+<div class="container">
+	<form method='POST' action="/apuestas/resultadoCarrera" >
+	    
+	    <h2>Carrera</h2>
+	    
+	    <select name="carrera">
+		    <option value="0">Escoje una carrera</option>
+		    <option th:each="granpremio : ${selectGrandesPremios}"
+		    		th:value="${granpremio.ciudad}" 
+		    		th:text="${granpremio.ciudad}"></option>
+	    </select>
+	    
+	    <h2>1º posición</h2>
+	    
+	    <select name="idpiloto1">
+		    <option value="">Elige un piloto</option>
+		    <option th:each="piloto :${listaPilotos}"
+		    		th:value="${piloto.nombre}"
+		    		th:text="${piloto.nombre}"></option>
+	    </select>
+	    
+	    <h2>2ª posición</h2>
+	    
+	  <select name="idpiloto2">
+		    <option value="">Elige un piloto</option>
+		    <option th:each="piloto :${listaPilotos}"
+		    		th:value="${piloto.nombre}"
+		    		th:text="${piloto.nombre}"></option>
+	    </select>
+	    
+	    <h2>3ª posición</h2>
+	    
+	    <select name="idpiloto3">
+		   <option value="">Elige un piloto</option>
+		    <option th:each="piloto :${listaPilotos}"
+		    		th:value="${piloto.nombre}"
+		    		th:text="${piloto.nombre}"></option>
+	    </select>
+	    
+	     <h2>Vuelta rápida</h2>
+	    
+	    <select name="vrapida">
+		   <option value="">Elige un piloto</option>
+		    <option th:each="piloto :${listaPilotos}"
+		    		th:value="${piloto.nombre}"
+		    		th:text="${piloto.nombre}"></option>
+	    </select>
+	    
+	    
+	 	<input type="submit" value="Enviar resultado">
+	 	
+	 	<p th:text="${mensaje}"></p>
+	 	<p th:text="${mensaje1}"></p>
+	 
+	 </form>
+</div>
+<a th:href = "@{/admin}"><i class="fas fa-arrow-alt-circle-left"></i> Volver</a>
+</body>
+</html>

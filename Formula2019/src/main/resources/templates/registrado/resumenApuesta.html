@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head th:replace="/fragmentos :: head">
+<meta charset="utf-8"> 
+</head>
+<body>
+
+
+<div th:replace="/fragmentos :: nav"></div>
+	<h1>Esta es tu apuesta</h1>
+	
+<div th:if="${apuesta_abierta}">
+
+	<table>
+		<tr>
+			<th>Carrera</th>
+		</tr>
+		<tr>
+			<td><p th:text="${carrera}"></p></td>
+		</tr>
+		<tr>
+			<th>Primera posición</th>
+			<th>Segunda posición</th>
+			<th>Tercera posición</th>
+		</tr>
+		<tr>
+			<td><p th:text="${idpiloto1}"></p></td>
+			<td><p th:text="${idpiloto2}"></p></td>
+			<td><p th:text="${idpiloto3}"></p></td>
+		</tr>
+		<tr>
+			<th>Vuelta rápida</th>
+		</tr>
+		<tr>
+			<td><p th:text="${vrapida}"></p></td>
+		</tr>
+	</table>
+</div>
+
+<p th:text="${mensaje_limite}"></p>
+<p th:text="${apuesta_abierta}"></p>
+	
+<span th:replace="/fragmentos :: bootstrap"></span>
+</body>
+</html>

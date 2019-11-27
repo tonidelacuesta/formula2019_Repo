@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:replace="/fragmentos :: head">
+<meta charset="UTF-8">
+<title>Grandes premios</title>
+</head>
+
+<body class="admin_panel">
+	<div class="container">
+		<h3>LISTADO GRANDES PREMIOS</h3>
+	</div>
+
+	<div class="container">
+		<table>
+			<tr>
+				<th>Ciudad</th>	
+			</tr>
+			
+			<tr th:each="granpremio: ${listaGrandesPremios}">
+				<td th:text="${granpremio.ciudad}"></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="d-flex flex-column bd-highlight mb-3">
+	  <div class="p-2 bd-highlight">
+	  	<a href="/grandespremios/formInsertaGrandesPremios">añadir Gran premio</a>
+	  </div>
+	  <div class="p-2 bd-highlight">
+	  	<a href="/admin"><i class="fas fa-arrow-alt-circle-left"></i> Volver</a>
+	  </div>
+	  <div class="p-2 bd-highlight">
+	  	<p th:text="${error}">
+	  </div>
+	</div>
+
+</body>
+</html>

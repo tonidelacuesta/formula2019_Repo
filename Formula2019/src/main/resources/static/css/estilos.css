@@ -1,0 +1,169 @@
+.saludo{
+	
+	font-family: 'Press Start 2P', cursive; 
+	color:#51FB1D;
+	
+	
+}
+.top-nav{
+	background-color:#343839;
+}
+.navbar-brand{
+	
+	font-family: 'Luckiest Guy', cursive;
+	color:#16779F !important;
+	font-size:1.6em;
+	text-shadow:1px 2px 2px #000;
+	
+}
+
+.menu-registro{
+	
+	
+	font-size:0.6em;
+	
+}
+.tapiz{
+    height:1000px;
+    background-image: url(../imagenes/piloto-rojo.png);
+    background-repeat:no-repeat;
+    background-position:-500px 0px;
+    background-size: cover;
+/*     object-fit:fill; */
+}
+.wrapper-login{
+
+    height: 1000px;
+    background-image: url(../imagenes/piloto-rojo.png);
+    background-repeat:no-repeat;
+    background-position:-500px 0px;
+    background-size: cover;
+/*     background-image: #D3EFF0; */
+}
+.titulo{
+    /*position:absolute;
+    top:240px;
+    left:20%;*/
+    color:#F2E231;
+    font-family: 'Luckiest Guy', cursive;
+    text-shadow: 2px 1px 1px #CF342C;
+    font-size:3em;
+}
+.entrar{
+
+	color:#fff;
+	font-size:1.3em;
+  text-shadow:1px 1px 1px black;
+}
+
+.boton-entrar{
+    width:40px;
+    height:20px;
+    position:absolute;
+    top:300px;
+    left:40%;
+}
+.form-login{
+    font-family:'Luckiest Guy', cursive;
+/*     width:80%; */
+	margin-left:30px;
+    margin-top:130px; 
+/*     padding-top:40px; */
+/*     padding-bottom:40px; */
+/*     border-radius:20px; */
+    position:absolute;
+    
+}
+
+.form-apuesta{
+	
+	font-family:'Luckiest Guy', cursive;
+	padding:20px;
+	width:80%;
+    margin:0 auto;
+    color:#fff;
+    text-shadow:1px 1px 2px #000;
+	
+}
+.fondo-apuesta{
+	background-image:url(../imagenes/piloto.png);
+	background-repeat:no-repeat;
+	background-position:-100px 0px;
+	background-size:cover;
+}
+
+	
+.form-apuesta > option{
+	
+	font-family:'Luckiest Guy', cursive;
+	
+}
+.form-apuesta > select{
+	margin-top:10px;
+	
+}
+
+.form-apuesta>h2{
+	margin-top:15px;
+}
+input.login{
+    
+    border-radius:5px;
+    font-family:'Luckiest Guy', cursive;
+    box-shadow: 2px 2px 1px #000;
+}
+input[type=submit]{
+	
+	margin-top:30px;
+	margin-left:45px;
+	padding:10px;
+	background-color:red;
+	color:#fff;
+	box-shadow:2px 2px 1px #000;
+	border-radius:5px;
+}
+.listado{
+	padding:8px;
+	font-size:0.8em;
+	width:80%;
+	position:relative;
+	top:20px;
+	left:40px;
+	background-color:rgba(255,255,255,0.7);
+
+	
+}
+th{
+	border-bottom:2px solid black;
+	margin-left:15px;
+}
+/* td{ */
+/* 	border-bottom:1px solid black; */
+/* } */
+.flag{
+	
+	height:800px;
+	background-image:url(../imagenes/flag.jpg);
+	
+}
+.banner{
+	height:200px;
+	margin-bottom:0;
+	background-image:url(../imagenes/chispas.jpeg);
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:-10px -50px;
+}
+.admin_panel{
+	
+	background-color:#184ea3;
+}
+.admin_panel div, li {
+	
+	background-color:#6594e0;
+	margin:3px 3px;
+}
+.admin_panel div {
+	padding:3px;
+	color:#fff;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head th:replace="/fragmentos :: head">
+<meta charset="utf-8"> 
+</head>
+
+<body>
+
+<div th:replace="/fragmentos :: nav"></div>
+
+<div class="flag">
+	<div class="listado text-center">
+		<h1>Clasificación</h1>
+		
+		<table>
+			<tr>
+				<th>Jugador</th>
+				<th>Puntos</th>
+				<th>Detalle</th>
+			</tr>
+			<tr th:each="jugador: ${listaUsuarios}">
+				<td th:text="${jugador.userName}">
+				<td th:text="${jugador.puntos}">
+				<td><a th:href="@{detalle_jugador(userName=${jugador.userName})}">mostrar</a></td>
+			</tr>
+		
+		</table>
+	</div>
+</div>
+<span th:replace="/fragmentos :: bootstrap"></span>
+</body>
+</html>

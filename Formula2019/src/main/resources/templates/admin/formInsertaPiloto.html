@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+	
+	<head th:replace="/fragmentos :: head">
+	<meta charset="utf-8">
+	<title>Formulario Pilotos</title>
+	</head>
+	
+	<body class="admin_panel">
+		
+		<div class="container">
+			<h3>Añadir piloto</h3>
+		</div>
+		
+		<div class="container">
+			<form th:object="${piloto}" action="/insertaPiloto" method="POST">
+				<table>
+					<tr>
+						<td>								
+							<p>Nombre: <input type="text" th:field="*{nombre}"/></p>
+							<p><input type="submit" value="Inserta piloto"/></p>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<a class="nav-link active" th:href="@{/listaPilotos}"><i class="fas fa-arrow-alt-circle-left"></i> Volver</a>
+	</body>
+
+</html>

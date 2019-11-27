@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head th:replace="/fragmentos :: head">
+<meta charset="utf-8"> 
+</head>
+<body>
+
+<body>
+ 
+    <div class="wrapper-login">
+         <div th:if="${param.error}">
+            Usuario o password inválido.
+        </div>
+        <div th:if="${param.logout}">
+            Has salido del sistema.
+        </div>
+        <div class="form-login d-flex">
+        <form th:action="@{/j_spring_security_check}" method="post">
+        	
+            <div><input placeholder="usuario" type="text" name="username" class="login mb-3"/></div>
+            <div><input placeholder="contraseña" type="password" name="password" class="login"/></div>
+            <div><input type="submit" value="Inicia sesión" class="btn btn-danger login mt-5"/></div>
+        </form>
+       </div>
+    </div>   
+<span th:replace="/fragmentos :: bootstrap"></span>
+</body>
+</html>

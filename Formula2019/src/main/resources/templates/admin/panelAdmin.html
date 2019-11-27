@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:replace="/fragmentos :: head">
+<meta charset="utf-8">
+</head>
+<title>Panel administración</title>
+</head>
+
+	<body class="admin_panel">
+	
+	<div class="container">
+		<h3>PANEL ADMINISTRADOR</h3>
+	</div>
+	
+	<!-- barra de navegación del panel de administración -->
+		<ul class="nav flex-column">
+	  <li class="nav-item">
+	    <a class="nav-link active" th:href="@{grandespremios/listaGrandesPremios}">Grandes Premios</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link active" th:href="@{/listaPilotos}">Pilotos</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link active" th:href="@{apuestas/insertResultado}">Resultado GP</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link active" th:href="@{apuestas/anularResultado}">Anular resultado</a>
+	  </li>
+	</ul>
+	
+	</body>
+</html>
