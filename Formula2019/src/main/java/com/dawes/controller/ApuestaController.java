@@ -144,6 +144,36 @@ public class ApuestaController {
 		return "admin/formResultadoCarrera";
 		
 	}
+	
+	@RequestMapping("/formAnularResultado")
+	public String formAnularResultado(Model modelo) {
+		
+		modelo.addAttribute("listadoCarreras", sgp.findAll());
+		
+		return "admin/anularResultado";
+	}
+	
+	@RequestMapping("/anularResultado")
+	public String anularResultado(Model modelo, @RequestParam String carrera) {
+		
+		GranPremioVO gp = sgp.findByCiudad(carrera);
+		Set<ApuestaVO> listadoApuestas = sa.findAllByCarrera(gp);
+		
+		for(ApuestaVO ap: listadoApuestas) {
+			
+			int puntos_ganados = ap.getAcierto_primero() + ap.getAcierto_segundo() + ap.getAcierto_tercero() + ap.getAcierto_vrapida();
+			UsuarioVO u = ap.getJugador();
+			int puntos_actuales = u.getPuntos();
+			
+			u.setPuntos(puntos_actuales - puntos_ganados);
+			sa.delete(ap);
+		}
+		
+		modelo.addAttribute("mensaje", "Se han restado los puntos ganados en el Gran Premio");
+		
+		return "admin/anularResultado";
+	}
+	
 		
 }			
 
